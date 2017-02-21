@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Validation</title>
+  </head>
+  <body>
+
+    {% if messages %}
+			{% for criteria in messages %}
+				<p>{{ criteria.message }}</p>
+			{% endfor %}
+		{% endif %}
+
+    <h2> Add an email </h2>
+    <form action='/create_user' method='post'>
+       {% csrf_token %}
+      <label for ="email">Email Address: <input type='text' name='email' id="email"></label>
+      <input type='submit' value='Add'>
+    </form>
+
+  </body>
+</html>
